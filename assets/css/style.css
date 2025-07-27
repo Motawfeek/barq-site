@@ -27,7 +27,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
-
+a{
+color: var(--primary-light)}
 .container {
     width: 90%;
     max-width: 1200px;
