@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/images/logo.png" type="image/png">
-
     <!-- إضافة Cache-Control في <head> -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     <title>من نحن | برق</title>
@@ -40,19 +38,18 @@
     </nav>
 
     <!-- قسم البطل -->
-<!-- قسم البطل -->
     <section class="hero">
-    <!-- لا نضع الفيديو مباشرة -->
-        <video id="heroVideo" class="hero-bg" poster="../assets/images/hero-poster.webp" muted playsinline></video>
-
+            <video autoplay muted loop playsinline class="hero-bg" poster="../assets/images/hero-poster.webp" preload="none">
+                <source src="../assets/images/about-hero.webm" type="video/webm">
+                <source src="../assets/images/about-hero.mp4" type="video/mp4">
+                <!-- Fallback للفيديو -->
+                <div class="video-fallback" style="background-image: url('../assets/images/hero-poster.webp')"></div>
+            </video>
         <div class="hero-content">
             <h1 class="wow fadeInUp">من نحن</h1>
-             <p class="wow fadeInUp" data-wow-delay="0.2s">
-                في برق، نؤمن أن التميّز يبدأ بخطوة تسويقية قوية وسريعة
-            </p>
+            <p class="wow fadeInUp" data-wow-delay="0.2s">في برق، نؤمن أن التميّز يبدأ بخطوة تسويقية قوية وسريعة</p>
         </div>
     </section>
-
 
     <!-- صفحة من نحن -->
     <section class="about-page">
@@ -189,32 +186,5 @@
             setTimeout(animateCounters, 1000);
         });
     </script>
-    <script>
-        window.addEventListener("load", () => {
-            const video = document.getElementById("heroVideo");
-    
-            const sourceWebM = document.createElement("source");
-            sourceWebM.src = "../assets/images/about-hero.webm";
-            sourceWebM.type = "video/webm";
-    
-            const sourceMP4 = document.createElement("source");
-            sourceMP4.src = "../assets/images/about-hero.mp4";
-            sourceMP4.type = "video/mp4";
-    
-            video.appendChild(sourceWebM);
-            video.appendChild(sourceMP4);
-    
-            video.autoplay = true;
-            video.loop = true;
-    
-            video.load();
-    
-            video.play().catch((e) => {
-                // لو المتصفح منع التشغيل التلقائي، نتجاهل
-                console.warn("Autoplay blocked:", e);
-            });
-        });
-    </script>
-
 </body>
 </html>
