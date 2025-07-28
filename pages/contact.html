@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <script>
-      (function() {
-        emailjs.init('nSlb8FozcI6Iw3wcy');
-      })();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init('nSlb8FozcI6Iw3wcy');
+  })();
+</script>
 </head>
 <body>
     <!-- شريط التنقل -->
@@ -165,38 +166,36 @@
 
     <script src="../assets/js/wow.min.js"></script>
     <script src="../assets/js/main.js"></script>
-    <script>
-        new WOW().init();
+     <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
 
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+      // هنا عدّل أسماء المفاتيح لتطابق Template عندك
+      const templateParams = {
+        from_name: document.getElementById('name').value,
+        reply_to:  document.getElementById('email').value,
+        phone:     document.getElementById('phone').value,
+        subject:   document.getElementById('subject').value,
+        message:   document.getElementById('message').value
+      };
 
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
-
-            const templateParams = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
-            emailjs.send('service_g2dq7nf', 'template_mn1tvht', templateParams)
-                .then(() => {
-                    alert('✔ تم إرسال الرسالة بنجاح!');
-                    document.getElementById('contactForm').reset();
-                })
-                .catch((error) => {
-                    alert('✖ حدث خطأ أثناء الإرسال. الرجاء المحاولة لاحقًا.');
-                    console.error(error);
-                })
-                .finally(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'إرسال الرسالة';
-                });
+      emailjs.send('service_g2dq7nf', 'template_mn1tvht', templateParams)
+        .then(() => {
+          alert('✔ تم إرسال الرسالة بنجاح!');
+          this.reset();
+        })
+        .catch(err => {
+          console.error('EmailJS Error:', err);
+          alert('✖ حدث خطأ أثناء الإرسال.');
+        })
+        .finally(() => {
+          btn.disabled = false;
+          btn.innerHTML = 'إرسال الرسالة';
         });
-    </script>
+    });
+  </script>
 </body>
 </html>
