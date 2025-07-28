@@ -186,6 +186,9 @@ color: var(--primary-light)}
 .hamburger.active span:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
 }
+.featured-projects .btn-outline {
+    margin-top: 40px; /* يمكنك تعديل هذه القيمة حسب احتياجك */
+}
 
 /* زر واتساب دائري */
 .whatsapp-float {
@@ -417,7 +420,7 @@ color: var(--primary-light)}
     right: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/projects-bg.jpg') no-repeat center center/cover;
+    background: url('../images/projects-bg.webp') no-repeat center center/cover;
     opacity: 0.2;
     z-index: 0;
 }
@@ -469,7 +472,7 @@ color: var(--primary-light)}
     right: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/projects-bg.png') no-repeat center center/cover;
+    background: url('../images/projects-bg.webp') no-repeat center center/cover;
     opacity: 0.2;
     z-index: 0;
 }
@@ -526,7 +529,7 @@ color: var(--primary-light)}
     right: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/about-bg.mp4') no-repeat center center/cover;
+    background: url('../images/about-bg.webp') no-repeat center center/cover;
     opacity: 0.2;
     z-index: 0;
 }
@@ -674,7 +677,7 @@ color: var(--primary-light)}
     right: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/services-bg.jpg') no-repeat center center/cover;
+    background: url('../images/services-bg.webp') no-repeat center center/cover;
     opacity: 0.2;
     z-index: 0;
 }

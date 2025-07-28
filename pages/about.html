@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- إضافة Cache-Control في <head> -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     <title>من نحن | برق</title>
     <link rel="stylesheet" href="../assets/css/animate.css">
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -37,9 +39,12 @@
 
     <!-- قسم البطل -->
     <section class="hero">
-        <video autoplay muted loop class="hero-bg">
-            <source src="../assets/images/about-hero.mp4" type="video/mp4">
-        </video>
+            <video autoplay muted loop playsinline class="hero-bg" poster="../assets/images/hero-poster.webp" preload="none">
+                <source src="../assets/images/about-hero.webm" type="video/webm">
+                <source src="../assets/images/about-hero.mp4" type="video/mp4">
+                <!-- Fallback للفيديو -->
+                <div class="video-fallback" style="background-image: url('../assets/images/hero-poster.webp')"></div>
+            </video>
         <div class="hero-content">
             <h1 class="wow fadeInUp">من نحن</h1>
             <p class="wow fadeInUp" data-wow-delay="0.2s">في برق، نؤمن أن التميّز يبدأ بخطوة تسويقية قوية وسريعة</p>
