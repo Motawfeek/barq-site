@@ -26,6 +26,9 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+   direction: rtl;
+   unicode-bidi: embed;
+   font-variant-numeric: lining-nums;
 }
 a{
 color: var(--primary-light)}
