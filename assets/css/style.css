@@ -38,6 +38,16 @@ color: var(--primary-light)}
     margin: 0 auto;
     padding: 0 15px;
 }
+.number {
+  direction: ltr;
+  unicode-bidi: isolate; /* 👈 الأفضل هنا بدل embed */
+  text-align: right;
+  font-variant-numeric: lining-nums;
+  display: block;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
 
 /* شريط التنقل - تم التعديل بشكل كامل */
 .navbar {
