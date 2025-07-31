@@ -372,11 +372,6 @@ video.hero-bg {
     -webkit-mask-image: none;
     mask-image: none;
 }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7dacd08 (تحديث شامل لكل الصفحات والستايل)
 /* قسم الخدمات */
 .featured-services {
     padding: 120px 0;
@@ -912,6 +907,7 @@ video.hero-bg {
     text-align: right;
     direction: rtl;
     font-size: 1.1rem;
+    appearance: none;
     -webkit-appearance: none;
     border-radius: 0;
     font-size: 16px !important;
@@ -1509,9 +1505,8 @@ video.hero-bg {
     .whatsapp-float i {
         font-size: 30px;
     }
-}
 
-<<<<<<< HEAD
+
   .about-content {
     display: flex;
     flex-direction: column;
@@ -1572,7 +1567,6 @@ video.hero-bg {
     padding: 10px 20px;
   }
 }
-/* =========== إصلاحات iOS المخصصة =========== */
 @supports (-webkit-touch-callout: none) {
   /* التمرير السلس */
   html {
@@ -1617,6 +1611,7 @@ video.hero-bg {
 
   /* العناصر التفاعلية */
   .btn {
+    appearance: none;
     -webkit-appearance: none;
     transform: translateZ(0);
   }
@@ -1639,6 +1634,7 @@ video.hero-bg {
   /* تأثيرات الحركة */
   .wow {
     -webkit-transform: translateZ(0);
+    transform: translateZ(0);
     backface-visibility: hidden;
   }
 
@@ -1647,7 +1643,6 @@ video.hero-bg {
     padding-bottom: calc(30px + env(safe-area-inset-bottom));
   }
 }
-=======
 /* تحسينات الفيديو */
 video {
     max-width: 100%;
@@ -1655,4 +1650,3 @@ video {
     object-fit: cover;
     display: block;
 }
->>>>>>> 7dacd08 (تحديث شامل لكل الصفحات والستايل)
