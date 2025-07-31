@@ -41,9 +41,10 @@
     <!-- قسم البطل -->
     <section class="hero">
         <div class="hero-video-wrapper">
-            <video autoplay muted loop playsinline class="hero-bg" poster="../assets/images/hero-poster.jpg" preload="none">
-                <source src="../assets/images/about-hero.webm" type="video/webm">
+            <video class="hero-bg" autoplay muted loop playsinline preload="none">
                 <source src="../assets/images/about-hero.mp4" type="video/mp4">
+                <source src="../assets/images/about-hero.webm" type="video/webm">
+                <img src="../assets/images/hero-poster.jpg" alt="Hero Background" />
             </video>
         </div>
 
@@ -165,14 +166,6 @@
     <a href="https://wa.me/966592323958" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <script>
-    window.addEventListener("DOMContentLoaded", () => {
-        setTimeout(() => {
-        const video = document.querySelector(".hero-bg");
-        if (video) video.load();
-        }, 2000); // تأخير 2 ثانية
-    });
-    </script>
 
     <script src="../assets/js/wow.min.js"></script>
     <script src="../assets/js/main.js"></script>
