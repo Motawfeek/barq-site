@@ -1485,91 +1485,78 @@ video.hero-bg {
     padding: 10px 20px;
   }
 }
-/* إصلاحات iOS المخصصة لموقع برق */
+/* =========== إصلاحات iOS المخصصة =========== */
 @supports (-webkit-touch-callout: none) {
-  /* تحسينات عامة */
+  /* التمرير السلس */
   html {
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(110, 69, 226, 0.3); /* لون Primary مع opacity */
+    -webkit-overflow-scrolling: touch;
     height: 100%;
+    -webkit-text-size-adjust: 100%;
   }
   
+  /* الهيكل الأساسي */
   body {
     overflow-x: hidden;
-    overscroll-behavior-y: none;
-    -webkit-overflow-scrolling: touch;
-    min-height: 100%;
-    background-color: #0a0a0a; /* لون الخلفية الداكن */
+    height: 100%;
+    background-color: var(--darker-color);
   }
 
-  /* إصلاحات الشريط العلوي */
+  /* شريط التنقل */
   .navbar {
+    position: fixed;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    position: -webkit-sticky;
-    padding-top: env(safe-area-inset-top);
   }
 
-  /* إصلاحات قسم البطل */
+  /* قسم البطل */
   .hero {
     height: 100vh;
     height: -webkit-fill-available;
-  }
-  
-  .hero-bg {
-    object-position: center top;
+    margin-top: constant(safe-area-inset-top);
+    margin-top: env(safe-area-inset-top);
   }
 
-  /* إصلاحات صفحة من نحن */
-  .about-page {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-  
-  .about-content > div {
-    transform: translateZ(0);
-    -webkit-transform-style: preserve-3d;
-    will-change: transform;
-  }
-
-  /* إصلاحات العدادات */
-  .stat-item {
-    -webkit-font-smoothing: antialiased;
+  /* الصفحات الداخلية */
+  .about-page,
+  .services-page,
+  .contact-page,
+  .projects-page {
+    padding-top: 80px;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 
-  /* إصلاحات الصور */
-  img:not([src*=".svg"]) {
-    -webkit-user-drag: none;
-    user-select: none;
-  }
-  
-  /* إصلاحات الفيديو */
-  video {
-    object-fit: cover;
-    object-position: center;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-  }
-
-  /* إصلاحات الأزرار */
+  /* العناصر التفاعلية */
   .btn {
     -webkit-appearance: none;
     transform: translateZ(0);
   }
-  
-  /* إصلاحات التمرير اللطيف */
-  [data-wow-delay] {
-    transition-delay: 0s !important;
-    animation-delay: 0s !important;
+
+  /* الصور والوسائط */
+  img:not(.logo-img) {
+    -webkit-user-drag: none;
+    user-select: none;
+    max-width: 100%;
   }
 
-  /* إصلاحات منطقة الأمان */
-  @supports (padding-bottom: env(safe-area-inset-bottom)) {
-    body {
-      padding-left: env(safe-area-inset-left);
-      padding-right: env(safe-area-inset-right);
-    }
-    
-    .footer {
-      padding-bottom: calc(30px + env(safe-area-inset-bottom));
-    }
+  /* الأزرار العائمة */
+  .whatsapp-float,
+  .chat-toggle {
+    bottom: calc(30px + env(safe-area-inset-bottom));
+    right: calc(30px + env(safe-area-inset-right));
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* تأثيرات الحركة */
+  .wow {
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* الفوتر */
+  .footer {
+    padding-bottom: calc(30px + env(safe-area-inset-bottom));
   }
 }
