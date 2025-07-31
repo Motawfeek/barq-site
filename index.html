@@ -51,6 +51,19 @@
             </div>
         </div>
     </section>
+        <!-- كود الجافاسكريبت لحذف الفيديو على الموبايل -->
+    <script>
+    window.addEventListener("DOMContentLoaded", function () {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const video = document.getElementById("heroVideo");
+
+        if (isMobile && video) {
+        video.remove(); // إلغاء تحميل الفيديو تمامًا على الأجهزة المحمولة
+        // أو لو عايز تفضل الخلفية مكانه حط صورة CSS
+        document.querySelector(".hero").style.background = "url('../assets/images/hero-poster.webp') no-repeat center center / cover";
+        }
+    });
+    </script>
 
     <!-- قسم الخدمات المميزة -->
     <section class="featured-services">
