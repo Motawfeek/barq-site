@@ -44,7 +44,7 @@
     <!-- قسم البطل -->
     <section class="hero">
     <!-- سيتم تشغيل الفيديو فقط على الشاشات الكبيرة -->
-    <video id="heroVideo" muted loop playsinline class="hero-bg" poster="../assets/images/hero-poster.webp" preload="none">
+    <video id="heroVideo" muted loop playsinline class="hero-bg" poster="../assets/images/hero-poster.jpg" preload="none">
         <source src="../assets/images/about-hero.mp4" type="video/mp4">
         <source src="../assets/images/about-hero.webm" type="video/webm">
         <!-- fallback غير مدعوم داخل <video> -->
@@ -65,7 +65,7 @@
         if (isMobile && video) {
         video.remove(); // إلغاء تحميل الفيديو تمامًا على الأجهزة المحمولة
         // أو لو عايز تفضل الخلفية مكانه حط صورة CSS
-        document.querySelector(".hero").style.background = "url('../assets/images/hero-poster.webp') no-repeat center center / cover";
+        document.querySelector(".hero").style.background = "url('../assets/images/hero-poster.jpg') no-repeat center center / cover";
         }
     });
     </script>
