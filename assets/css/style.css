@@ -376,15 +376,29 @@ color: var(--primary-light)}
 .service-card {
     background: #111;
     border-radius: 12px;
-    padding: 45px 35px;
-    transition: var(--transition);
+    padding: 20px;
     border: 1px solid rgba(255,255,255,0.08);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
+    box-sizing: border-box;
 }
 
 .service-card:hover {
     transform: translateY(-12px);
     box-shadow: 0 20px 35px rgba(110, 69, 226, 0.25);
+}
+
+.service-img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    object-fit: contain; /* ضمان عدم القص */
 }
 
 .service-icon {
@@ -405,6 +419,7 @@ color: var(--primary-light)}
     line-height: 1.9;
     font-size: 1.1rem;
 }
+
 
 /* قسم اعمالنا */
 .featured-projects {
@@ -444,6 +459,9 @@ color: var(--primary-light)}
     transition: var(--transition);
     border: 1px solid rgba(255,255,255,0.08);
     text-align: center;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
 }
 
 .project-item:hover {
@@ -452,9 +470,11 @@ color: var(--primary-light)}
 }
 
 .project-item img {
-    width: 100%;
-    height: auto;
     display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px;
 }
 
 /* صفحة المشاريع */
@@ -501,18 +521,24 @@ color: var(--primary-light)}
     overflow: hidden;
     transition: var(--transition);
     border: 1px solid rgba(255,255,255,0.08);
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
     display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px;
 }
 
 .gallery-item:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(110, 69, 226, 0.25);
 }
+
 
 /* صفحة من نحن */
 .about-page {
@@ -932,33 +958,33 @@ color: var(--primary-light)}
 /* الفوتر */
 .footer {
     background-color: #111;
-    padding: 25px 0 10px; /* تم تقليل البادينج */
+    padding: 25px 0 10px;
     border-top: none;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; /* تقليل الفراغ بين الأعمدة */
-    margin-bottom: 30px; /* تقليل المسافة السفلية */
+    gap: 25px;
+    margin-bottom: 30px;
 }
 
 .footer-logo {
-    height: 70px; /* تقليل ارتفاع اللوجو */
-    margin-bottom: 15px; /* تقليل المسافة تحته */
+    height: 70px;
+    margin-bottom: 15px;
 }
 
 .footer-brand p {
     color: var(--text-secondary);
-    margin-bottom: 15px; /* تقليل المسافة السفلية */
-    font-size: 1rem; /* تقليل حجم الخط قليلاً */
+    margin-bottom: 15px;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
 .footer-links h3,
 .footer-contact h3 {
     color: #fff;
-    font-size: 1.3rem; /* تصغير بسيط */
+    font-size: 1.3rem;
     margin-bottom: 20px;
     padding-bottom: 10px;
 }
@@ -969,12 +995,23 @@ color: var(--primary-light)}
     height: 2px;
 }
 
+.footer-links ul {
+    list-style-type: disc; /* الحفاظ على النقاط في قسم الروابط */
+    padding-left: 20px; /* مسافة بادئة مناسبة للنقاط */
+}
+
 .footer-links ul li {
     margin-bottom: 10px;
 }
 
 .footer-links ul li a {
     font-size: 1rem;
+    text-decoration: none;
+}
+
+.footer-contact ul {
+    list-style-type: none; /* إزالة النقاط من قسم جهات الاتصال */
+    padding-left: 0;
 }
 
 .footer-contact ul li {
@@ -986,7 +1023,6 @@ color: var(--primary-light)}
     font-size: 1.1rem;
     margin-left: 10px;
 }
-
 
 .social-links {
     display: flex;
@@ -1020,7 +1056,6 @@ color: var(--primary-light)}
     color: #666;
     font-size: 1rem;
 }
-
 /* شات بوت */
 .chat-bot {
     position: fixed;
@@ -1375,4 +1410,70 @@ color: var(--primary-light)}
     .whatsapp-float i {
         font-size: 30px;
     }
+}
+/* تحسين عرض محتوى صفحة من نحن على الموبايل */
+@media (max-width: 768px) {
+  .about-page .container {
+    padding: 15px;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-content > div {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .about-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .about-values ul {
+    padding-right: 0;
+    text-align: right;
+  }
+
+  .about-values li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .about-start {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .about-start h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .about-start p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .about-start .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
 }
