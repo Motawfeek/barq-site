@@ -43,32 +43,17 @@
 
     <!-- قسم البطل -->
     <section class="hero">
-    <!-- سيتم تشغيل الفيديو فقط على الشاشات الكبيرة -->
-    <video id="heroVideo" muted loop playsinline class="hero-bg" poster="../assets/images/hero-poster.jpg" preload="none">
-        <source src="../assets/images/about-hero.mp4" type="video/mp4">
-        <source src="../assets/images/about-hero.webm" type="video/webm">
-        <!-- fallback غير مدعوم داخل <video> -->
-    </video>
-
-    <div class="hero-content">
-        <h1 class="wow fadeInUp">من نحن</h1>
-        <p class="wow fadeInUp" data-wow-delay="0.2s">في برق، نؤمن أن التميّز يبدأ بخطوة تسويقية قوية وسريعة</p>
-    </div>
+            <video autoplay muted loop playsinline class="hero-bg" poster="../assets/images/hero-poster.webp" preload="none">
+                <source src="../assets/images/about-hero.webm" type="video/webm">
+                <source src="../assets/images/about-hero.mp4" type="video/mp4">
+                <!-- Fallback للفيديو -->
+                <div class="video-fallback" style="background-image: url('../assets/images/hero-poster.webp')"></div>
+            </video>
+        <div class="hero-content">
+            <h1 class="wow fadeInUp">من نحن</h1>
+            <p class="wow fadeInUp" data-wow-delay="0.2s">في برق، نؤمن أن التميّز يبدأ بخطوة تسويقية قوية وسريعة</p>
+        </div>
     </section>
-
-    <!-- كود الجافاسكريبت لحذف الفيديو على الموبايل -->
-    <script>
-    window.addEventListener("DOMContentLoaded", function () {
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        const video = document.getElementById("heroVideo");
-
-        if (isMobile && video) {
-        video.remove(); // إلغاء تحميل الفيديو تمامًا على الأجهزة المحمولة
-        // أو لو عايز تفضل الخلفية مكانه حط صورة CSS
-        document.querySelector(".hero").style.background = "url('../assets/images/hero-poster.jpg') no-repeat center center / cover";
-        }
-    });
-    </script>
 
 <!-- باقي الصفحة بدون تغيير -->
 
