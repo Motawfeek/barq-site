@@ -26,7 +26,6 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
-<<<<<<< HEAD
     direction: rtl;
     unicode-bidi: embed;
     font-variant-numeric: lining-nums;
@@ -36,34 +35,23 @@ a {
 color: var(--primary-light)
 }
 
-=======
-   direction: rtl;
-   unicode-bidi: embed;
-   font-variant-numeric: lining-nums;
-}
-a{
-color: var(--primary-light)}
->>>>>>> 58852f9 (Update CNAME, style.css, and index.html)
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
+
 .phone-number {
-  direction: ltr;
-  unicode-bidi: bidi-override;
-  text-align: right;
-  font-variant-numeric: lining-nums;
-  font-family: sans-serif;
-  font-size: 16px;
+    direction: ltr;
+    unicode-bidi: bidi-override;
+    text-align: right;
+    font-variant-numeric: lining-nums;
+    font-family: sans-serif;
+    font-size: 16px;
 }
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 58852f9 (Update CNAME, style.css, and index.html)
 /* شريط التنقل - تم التعديل بشكل كامل */
 .navbar {
     position: fixed;
@@ -87,7 +75,7 @@ color: var(--primary-light)}
     background:rgba(0, 0, 0, 0.8) !important;
     backdrop-filter: blur(12px) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4)
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4)
 }
 
 .navbar.transparent {
@@ -1359,10 +1347,7 @@ video.hero-bg {
 
     .hero {
         margin-top: 110px;
-<<<<<<< HEAD
         position: static;
-=======
->>>>>>> 58852f9 (Update CNAME, style.css, and index.html)
     }
     
     .hero h1 {
@@ -1472,7 +1457,6 @@ video.hero-bg {
         font-size: 30px;
     }
 }
-<<<<<<< HEAD
 
 @media (max-width: 375px) {
     .gallery-grid {
@@ -1488,8 +1472,6 @@ video.hero-bg {
     }
  }
 
-=======
->>>>>>> 58852f9 (Update CNAME, style.css, and index.html)
 /* تحسين عرض محتوى صفحة من نحن على الموبايل */
 @media (max-width: 768px) {
   .about-page .container {
@@ -1575,13 +1557,8 @@ video.hero-bg {
 
   /* إصلاحات الشريط العلوي */
   .navbar {
-<<<<<<< HEAD
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
-=======
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
->>>>>>> 58852f9 (Update CNAME, style.css, and index.html)
     position: -webkit-sticky;
     padding-top: env(safe-area-inset-top);
   }
@@ -1604,10 +1581,6 @@ video.hero-bg {
   .about-content > div {
     transform: translateZ(0);
     -webkit-transform-style: preserve-3d;
-<<<<<<< HEAD
-=======
-    transform-style: preserve-3d;
->>>>>>> 58852f9 (Update CNAME, style.css, and index.html)
     will-change: transform;
   }
 
@@ -1627,10 +1600,6 @@ video.hero-bg {
     object-fit: cover;
     object-position: center;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
-<<<<<<< HEAD
-=======
-    mask-image: radial-gradient(white, black);
->>>>>>> 58852f9 (Update CNAME, style.css, and index.html)
   }
 
   /* إصلاحات الأزرار */
@@ -1656,8 +1625,4 @@ video.hero-bg {
       padding-bottom: calc(30px + env(safe-area-inset-bottom));
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 58852f9 (Update CNAME, style.css, and index.html)
